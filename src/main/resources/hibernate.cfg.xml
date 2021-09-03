@@ -1,0 +1,7 @@
+<hibernate-configuration>
+    <session-factory>
+
+        <mapping resource="Movie.hbm.xml" />
+
+    </session-factory>
+</hibernate-configuration>
