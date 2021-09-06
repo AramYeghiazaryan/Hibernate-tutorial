@@ -18,7 +18,6 @@ public class DirectorEntity {
     @Column
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "MOVIE_ID")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "director")
     private Set<MovieEntity> movies;
 }
