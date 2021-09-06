@@ -1,18 +1,27 @@
 package entities.builder;
 
+import entities.ActorEntity;
+import entities.DirectorEntity;
 import entities.MovieEntity;
+
+import java.util.Set;
 
 public class MovieBuilder {
     private String title;
-    private String director;
+    private Long length;
+    private DirectorEntity director;
+    private Set<ActorEntity> actors;
 
-    public MovieBuilder() {}
+    public MovieBuilder() {
+    }
 
 
     public MovieEntity build() {
         MovieEntity movieEntity = new MovieEntity();
-        movieEntity.setDirector(this.director);
         movieEntity.setTitle(this.title);
+        movieEntity.setLength(this.length);
+        movieEntity.setDirector(this.director);
+        movieEntity.setActors(this.actors);
         return movieEntity;
     }
 
@@ -21,10 +30,9 @@ public class MovieBuilder {
         return this;
     }
 
-    public MovieBuilder setDirector(String director) {
-        this.director = director;
+    public MovieBuilder setLength(Long length) {
+        this.length = length;
         return this;
     }
-
 
 }
