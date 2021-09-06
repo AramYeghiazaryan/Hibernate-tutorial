@@ -4,9 +4,11 @@ import org.hibernate.Session;
 
 public class EntityPersist<T> {
 
+    private final static TransactionUtils transaction = new TransactionUtils();
+
     public void persist(T entity) {
         Session session = SessionFactorySingleton.getSessionInstance().getCurrentSession();
-        session.save(entity);
+        transaction.doWithTransaction(session, () -> session.save(entity));
     }
 
 }

@@ -1,7 +1,8 @@
 <hibernate-configuration>
     <session-factory>
-
+        <property name="hibernate.current_session_context_class">
+            org.hibernate.context.internal.ThreadLocalSessionContext
+        </property>
         <mapping resource="Movie.hbm.xml" />
-
     </session-factory>
 </hibernate-configuration>

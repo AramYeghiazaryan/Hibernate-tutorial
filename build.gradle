@@ -13,6 +13,8 @@ dependencies {
     implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.1.Final'
     annotationProcessor "org.projectlombok:lombok:1.18.20"
     compileOnly 'org.projectlombok:lombok:1.18.20'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.23'
+
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'

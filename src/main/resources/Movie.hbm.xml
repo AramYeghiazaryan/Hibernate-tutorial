@@ -1,7 +1,7 @@
 <hibernate-mapping>
     <class name="entities.MovieEntity" table="Movie">
         <id name="id" column="ID">
-            <generator class="native"/>
+            <generator class="identity"/>
         </id>
         <property name="title" column="TITLE"/>
         <property name="director" column="DIRECTOR"/>
