@@ -8,12 +8,17 @@ public class EntityPersist<T> {
 
     private final static TransactionUtils transaction = new TransactionUtils();
 
-    public void persist(List<T> entities) {
-        Session session = SessionFactorySingleton.getSessionInstance().getCurrentSession();
+    public void persist(T... entities) {
+        final Session session = SessionFactorySingleton.getSessionInstance().getCurrentSession();
         transaction.doWithTransaction(session, () -> {
-            entities.forEach(session::save);
+            List.of(entities).forEach(session::save);
             return true;
         });
+    }
+
+    public T getById(Class<T> clazz, Long id) {
+        final Session session = SessionFactorySingleton.getSessionInstance().getCurrentSession();
+        return transaction.doWithTransaction(session, () -> session.get(clazz, id));
     }
 
 }

@@ -14,6 +14,9 @@ public class MovieEntity {
     @Column(name = "MOVIE_ID")
     private int id;
 
+    @Embedded
+    private MyEmbeddedType embeddedType;
+
     @Column
     private String title;
 

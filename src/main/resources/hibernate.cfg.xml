@@ -4,13 +4,20 @@
             org.hibernate.context.internal.ThreadLocalSessionContext
         </property>
 
-<!--        To read from Resource File directory.-->
-<!--        <mapping resource="Movie.hbm.xml" />-->
+        <!--        To read from Resource File directory.-->
+        <!--        <mapping resource="Movie.hbm.xml" />-->
 
-<!--        Reads from Entity Class-->
-        <mapping class="entities.MovieEntity" />
-        <mapping class="entities.DirectorEntity" />
-        <mapping class="entities.ActorEntity" />
+        <!--        Reads from Entity Class-->
+        <mapping class="entities.MovieEntity"/>
+        <mapping class="entities.DirectorEntity"/>
+        <mapping class="entities.ActorEntity"/>
+        <mapping class="entities.inheritance.table_per_class.Employee"/>
+        <mapping class="entities.inheritance.table_per_class.Person"/>
+        <mapping class="entities.inheritance.table_per_subclass.Animal"/>
+        <mapping class="entities.inheritance.table_per_subclass.Bird"/>
+        <mapping class="entities.inheritance.table_per_concrete_class.BMW"/>
+        <mapping class="entities.inheritance.table_per_concrete_class.Mercedes"/>
+        <mapping class="entities.inheritance.table_per_concrete_class.Car"/>
 
     </session-factory>
 </hibernate-configuration>
