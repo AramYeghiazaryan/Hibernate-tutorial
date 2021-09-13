@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 
 public class TransactionUtils {
 
-    <T> T doWithTransaction(Session currentSession, Supplier<T> supplier) {
+    public static <T> T doWithTransaction(Session currentSession, Supplier<T> supplier) {
         Transaction transaction = getSessionTransaction(currentSession);
         T returnValue = supplier.get();
         transaction.commit();

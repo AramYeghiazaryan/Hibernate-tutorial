@@ -11,8 +11,13 @@ import entities.inheritance.table_per_concrete_class.Car;
 import entities.inheritance.table_per_concrete_class.Mercedes;
 import entities.inheritance.table_per_subclass.Animal;
 import entities.inheritance.table_per_subclass.Bird;
+import org.hibernate.Session;
 import utils.EntityPersist;
+import utils.HQLUtils;
+import utils.SessionFactorySingleton;
+import utils.TransactionUtils;
 
+import java.util.List;
 import java.util.Set;
 
 public class HibernateTest {
@@ -29,6 +34,12 @@ public class HibernateTest {
         testInheritanceTablePerClass();
         testInheritanceTablePerSubClass();
         testInheritanceTablePerConcreteClass();
+    }
+
+    private static void testHQL() {
+        Session session = SessionFactorySingleton.getSessionInstance().getCurrentSession();
+        List<MovieEntity> movieEntities = HQLUtils.getList(MovieEntity.class, session);
+        System.out.println(movieEntities);
     }
 
     private static void testInheritanceTablePerConcreteClass() {
